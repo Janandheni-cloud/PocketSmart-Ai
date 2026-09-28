@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}PocketSmart AI{% endblock %}</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <nav>
+    <a class="brand" href="/">PocketSmart AI</a>
+    <div>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/home-planner">Home</a>
+      <a href="/party-planner">Party</a>
+      <a href="/jewelry-planner">Jewelry</a>
+      <a href="/history-page">History</a>
+      <button id="logoutBtn" class="linkbtn">Logout</button>
+    </div>
+  </nav>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <script src="/static/js/app.js"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

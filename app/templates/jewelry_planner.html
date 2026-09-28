@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Jewelry Planner{% endblock %}
+{% block content %}
+<div class="form-card wide">
+  <h1>💎 Jewelry Planner</h1>
+  <form id="jewelryForm" enctype="multipart/form-data">
+    <label>Budget (₹)
+      <input name="budget" type="number" min="1" step="1" required>
+    </label>
+    <label>Occasion
+      <input name="occasion" placeholder="Wedding, festival, party..." required>
+    </label>
+    <label>Style
+      <input name="style" placeholder="Traditional, minimal, statement..." required>
+    </label>
+    <label>Preferences
+      <textarea name="preferences" placeholder="Metal, color, type..."></textarea>
+    </label>
+    <label>Optional outfit image
+      <input name="outfit" type="file" accept="image/png,image/jpeg,image/webp">
+    </label>
+    <button class="btn" type="submit">Generate recommendations</button>
+  </form>
+  <div id="result"></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>bindJewelry();</script>
+{% endblock %}

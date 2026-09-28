@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Party Planner{% endblock %}
+{% block content %}
+<div class="form-card wide">
+  <h1>🎉 Party Planner</h1>
+  <form id="partyForm">
+    <label>Budget (₹)
+      <input name="budget" type="number" min="1" step="1" required>
+    </label>
+    <label>Guest count
+      <input name="guests" type="number" min="1" step="1" required>
+    </label>
+    <label>Event type
+      <input name="event_type" placeholder="Birthday, wedding, corporate..." required>
+    </label>
+    <label>Venue details
+      <input name="venue" placeholder="Home, hall, city..." required>
+    </label>
+    <label>Preferences
+      <textarea name="preferences" placeholder="Vegetarian, theme, music..."></textarea>
+    </label>
+    <button class="btn" type="submit">Generate recommendations</button>
+  </form>
+  <div id="result"></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>bindPlanner("partyForm", "/api/generate-party");</script>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Home Planner{% endblock %}
+{% block content %}
+<div class="form-card wide">
+  <h1>🏠 Home Interior Planner</h1>
+  <form id="homeForm">
+    <label>Budget (₹)
+      <input name="budget" type="number" min="1" step="1" required>
+    </label>
+    <label>Room
+      <input name="room" placeholder="Living Room" required>
+    </label>
+    <label>Style
+      <input name="style" placeholder="Modern, minimal..." required>
+    </label>
+    <label>Items needed
+      <textarea name="items" placeholder="Sofa, lights, table..." required></textarea>
+    </label>
+    <button class="btn" type="submit">Generate recommendations</button>
+  </form>
+  <div id="result"></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>bindPlanner("homeForm", "/api/generate-home");</script>
+{% endblock %}

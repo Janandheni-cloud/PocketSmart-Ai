@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<section>
+  <h1 id="welcome">Dashboard</h1>
+  <div class="grid three">
+    <a class="cardlink" href="/home-planner">
+      <h2>🏠 Home Planner</h2>
+      <p>Interior budget recommendations</p>
+    </a>
+    <a class="cardlink" href="/party-planner">
+      <h2>🎉 Party Planner</h2>
+      <p>Event budget allocation</p>
+    </a>
+    <a class="cardlink" href="/jewelry-planner">
+      <h2>💎 Jewelry Planner</h2>
+      <p>Occasion and outfit-aware ideas</p>
+    </a>
+  </div>
+  <h2>Recent history</h2>
+  <div id="recent"></div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script>loadDashboard();</script>
+{% endblock %}
